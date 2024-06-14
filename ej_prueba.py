@@ -41,13 +41,18 @@ while True:
         trabajador = [nombre_apellido , cargo , sueldo_bruto ,desc_afp , desc_salud , sueldo_liquido]
         trabajadores.append(trabajador)
         print("TRABAJADOR REGISTRADO CON EXITO!")    
-        
-      
-
 
     elif opc == 2:
+        if len(trabajadores) == 0:
+            print("No existen trabajadores, elija la opción 1")
+        else:
+            print("\tLista de trabajadores")
+            print("Trabajador \tCargo \tSueldo Bruto \tDes. Salud \t Des. AFP \tLiquido a pagar")
+            for t in trabajadores:  # t seria cada trabajador de la lista, t es una lista dentro de otra lista
+                
+                for x in range(6):
+                    print(f"{t[0]}\t{t[1]}\t\t{t[2]}\t\t{t[3]}\t\t{t[4]}\t\t{t[5]}")
 
-        pass
     elif opc== 3:
         pass
     elif opc == 4:
@@ -57,3 +62,4 @@ while True:
     else:
         print("La opción elegida no esta en el menú")
         time.sleep(1.5)
+    time.sleep(3)
